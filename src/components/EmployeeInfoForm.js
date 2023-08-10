@@ -10,13 +10,17 @@ const EmployeeInfoForm = (props) => {
   const [employeeList, setEmployeeList] = useState(initialList);
 
   const inputNameChangeHandler = (event) => {
-    setEmployeeList((prevList) => {
-      return {
-        ...prevList,
-        name: event.target.value,
-        key: Math.random(),
-      };
-    });
+    if (event.target.value.trim() !== "") {
+      setEmployeeList((prevList) => {
+        return {
+          ...prevList,
+          name: event.target.value,
+          key: Math.random(),
+        };
+      });
+    }else {
+      setEmployeeList("");
+    }
   };
 
   const inputAgeChangeHandler = (event) => {
@@ -24,9 +28,11 @@ const EmployeeInfoForm = (props) => {
       setEmployeeList((prevList) => {
         return {
           ...prevList,
-          age: event.target.value,
+          age: event.target.value.trim(),
         };
       });
+    }else{
+      setEmployeeList("")
     }
   };
 
@@ -44,7 +50,6 @@ const EmployeeInfoForm = (props) => {
           id="userName"
           onChange={inputNameChangeHandler}
           type="text"
-          pattern="[A-Za-z]+"
         ></input>
         <label htmlFor="userAge">Age(Years)</label>
         <input
