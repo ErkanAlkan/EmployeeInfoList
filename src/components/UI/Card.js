@@ -1,7 +1,7 @@
 import "./Card.css";
 
 const Card = (props) => {
-    return <div className="card input">
+    return <div className= {`${props.className} card input` } >
     {props.children}
     </div>
 }
