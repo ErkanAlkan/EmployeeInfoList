@@ -4,7 +4,7 @@ import "./ErrorModal.css";
 
 const ErrorModal = (props) => {
   return (
-    <div>
+    <>
       <div className="backdrop" onClick={props.clickHandler}></div>
       <Card className="modal">
         <header className="header">
@@ -17,7 +17,7 @@ const ErrorModal = (props) => {
           <Button onClick={props.clickHandler}>Okay</Button>
         </footer>
       </Card>
-    </div>
+    </>
   );
 };
 

@@ -12,12 +12,12 @@ function App() {
   console.log(employeeList);
 
   return (
-    <div>
+    <>
       <EmployeeInfoForm passData={dataHandler}></EmployeeInfoForm>
       {employeeList && (
         <EmployeeTable employeeList={employeeList}></EmployeeTable>
       )}
-    </div>
+    </>
   );
 }
 
